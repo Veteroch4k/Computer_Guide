@@ -1,4 +1,4 @@
-package com.veteroch4k.org;
+package com.veteroch4k.computer_guide;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

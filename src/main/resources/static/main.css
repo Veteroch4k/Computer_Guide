@@ -1,0 +1,58 @@
+	.btn {
+		color: black;
+		border: black;
+	}
+	.bodz {
+		display: flex;
+		flex-direction: row;
+		margin: 25px;
+		margin-left: 115px;
+		height: 360px;
+		width: 1000px;
+		border: 1px solid #0d6efd;
+	}
+	img {
+		width: 260px;
+		height: auto;
+	}
+	.img-thumbnail{
+		border: none;
+	}
+	#carouselExampleDark {
+		margin-top: 40px;
+		margin-left: 18px;
+		margin-bottom: 90px;
+		width: 300px;
+	}
+	#carouselExampleDark_1 {
+		margin-top: 40px;
+		margin-left: 18px;
+		margin-bottom: 90px;
+		width: 300px;
+	}
+	.textic {
+		font-family: Times New Roman;
+		width: 650px;
+		margin-top: 20px;
+		margin-left: 18px;
+		margin-bottom: 20px;
+	}
+	.silca {
+		color: black;
+		text-decoration: none;
+	}
+	.silca:hover {
+		color: #3E70BD;
+	}
+	.foot {
+		width: 100%;
+		height: 153px;
+		background-color: #0d6efd;
+		display: flex;
+		flex-direction: row;
+		font-family: arial;
+	}
+	.palec {
+		margin-left: 15px;
+		color: white;
+	}
