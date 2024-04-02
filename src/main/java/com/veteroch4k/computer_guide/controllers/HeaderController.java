@@ -15,5 +15,11 @@ public class HeaderController {
         modelAndView.setViewName("header-pages/aboutUs");
         return modelAndView;
     }
+    @GetMapping("/testing-system")
+    public ModelAndView testing(ModelAndView modelAndView) {
+        modelAndView.addObject("title", "Система тестирования");
+        modelAndView.setViewName("header-pages/testing-system");
+        return modelAndView;
+    }
 
 }

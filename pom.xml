@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.veteroch4k</groupId>
-	<artifactId>omputer-guide</artifactId>
+	<artifactId>computer-guide</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Computer Guide</name>
 	<description>Website guide to the internal structure of the PC and its peripherals</description>
