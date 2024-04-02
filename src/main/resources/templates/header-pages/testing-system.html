@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<head th:replace="~{blocks/head :: head(title = ${title})}"></head>
+
 <body>
 
+<header th:replace="~{blocks/header :: header}"></header>
+
+<main>
+
+</main>
+
+
+<footer  class="fixed-bottom" th:insert="~{blocks/footer :: footer}"></footer>
+
 </body>
+
 </html>
