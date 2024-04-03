@@ -1,0 +1,509 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{blocks/head :: head(title = ${title})}">
+</head>
+
+<body>
+<header th:replace="~{blocks/header :: header}"></header>
+
+<main class="bg-light">
+
+  <div class="container py-4" id="cpu">
+
+
+    <!-- 1 вопрос-->
+
+    <div class="question">
+
+      <div class="p-3 mb-4 rounded-3 ">
+        <div class="container-fluid py-4 bg-white rounded-5">
+          <h1 class="display-5 fw-bold fs-1">Какие функции выполняет центральный процессор?</h1>
+          <div class="d-flex flex-column flex-md-row  gap-4  align-items-center ">
+
+            <div class="1">
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="checkbox" id="1-1" value="1">
+                <span> Исполнение арифметических и логических операций </span>
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="checkbox" id="1-2" value="2">
+                <span> Управление потоками данных в компьютере </span>
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="checkbox" id="1-3" value="3">
+                <span> Обработка входных и выходных операций </span>
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="checkbox" id="1-4" value="4">
+                <span> Хранение данных </span>
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="checkbox" id="1-5" value="5">
+                <span> Контроль за работой других устройств компьютера </span>
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="checkbox" id="1-6" value="6">
+                <span> Охлаждение системы </span>
+              </label>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 2 вопрос-->
+    <div class="question">
+      <div class="p-3 mb-4 rounded-3 ">
+        <div class="container-fluid py-4 bg-white rounded-5">
+          <h1 class="display-5 fw-bold fs-1">Какую аббревиатуру носит центральный процессор?</h1>
+          <div class="d-flex flex-column flex-md-row  gap-4  align-items-center ">
+            <div class="2">
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="2-1" value="1">
+
+                <span> HDD </span>
+
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="2-2" value="2">
+
+                <span> CPU </span>
+
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="2-3" value="3">
+                <span> CPP </span>
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="2-4" value="4">
+                <span> GPU </span>
+              </label>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 вопрос-->
+    <div class="question">
+      <div class="p-3 mb-4 rounded-3 ">
+        <div class="container-fluid py-4 bg-white rounded-5">
+          <h1 class="display-5 fw-bold fs-1">Что такое кэш-память в CPU?</h1>
+          <div class="d-flex flex-column flex-md-row  gap-4  align-items-center ">
+            <div class="3">
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="3-1" value="1">
+
+                <span> Основная память для хранения данных </span>
+
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="3-2" value="2">
+
+                <span> Дополнительная память для ускорения доступа к часто используемым данным </span>
+
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="3-3" value="3">
+                <span> Память для хранения временных файлов </span>
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="3-4" value="4">
+                <span> Память для хранения BIOS </span>
+              </label>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 4 вопрос-->
+    <div class="question">
+
+      <div class="p-3 mb-4 rounded-3 ">
+        <div class="container-fluid py-4 bg-white rounded-5">
+          <h1 class="display-5 fw-bold fs-1">Какой параметр CPU влияет на скорость передачи данных
+            между процессором и оперативной памятью?</h1>
+          <div class="d-flex flex-column flex-md-row  gap-4  align-items-center ">
+            <div class="4">
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="4-1" value="1">
+
+                <span> Частота шины </span>
+
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="4-2" value="2">
+
+                <span> Размер кэша </span>
+
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="4-3" value="3">
+                <span> Количество ядер </span>
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="4-4" value="4">
+                <span> Частота процессора </span>
+              </label>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 5 вопрос-->
+    <div class="question">
+
+      <div class="p-3 mb-4 rounded-3 ">
+        <div class="container-fluid py-4 bg-white rounded-5">
+          <h1 class="display-5 fw-bold fs-1">Какой параметр CPU указывает на его
+            энергоэффективность?</h1>
+          <div class="d-flex flex-column flex-md-row  gap-4  align-items-center ">
+            <div class="5">
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="5-1" value="1">
+
+                <span> Частота процессора </span>
+
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="5-2" value="2">
+
+                <span> Количество ядер </span>
+
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="5-3" value="3">
+                <span> TDP </span>
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="5-4" value="4">
+                <span> Размер кэша</span>
+              </label>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 6 вопрос-->
+    <div class="question">
+
+      <div class="p-3 mb-4 rounded-3 ">
+        <div class="container-fluid py-4 bg-white rounded-5">
+          <h1 class="display-5 fw-bold fs-1">Что такое ядро в контексте CPU?</h1>
+          <div class="d-flex flex-column flex-md-row  gap-4  align-items-center ">
+            <div class="6">
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="6-1" value="1">
+
+                <span> Часть процессора, отвечающая за охлаждение </span>
+
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="6-2" value="2">
+
+                <span> Отдельный процессор внутри CPU </span>
+
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="6-3" value="3">
+                <span> Память, используемая процессором </span>
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="6-4" value="4">
+                <span> Энергопотребление процессора </span>
+              </label>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 7 вопрос-->
+    <div class="question">
+
+      <div class="p-3 mb-4 rounded-3 ">
+        <div class="container-fluid py-4 bg-white rounded-5">
+          <h1 class="display-5 fw-bold fs-1">Центральный процессор (CPU) может выполнять только одну
+            операцию за такт</h1>
+          <div class="d-flex flex-column flex-md-row  gap-4  align-items-center ">
+            <div class="7">
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="7-1" value="1">
+
+                <span> Истина </span>
+
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="7-2" value="2">
+
+                <span> Ложь </span>
+
+              </label>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 8 вопрос-->
+    <div class="question">
+
+      <div class="p-3 mb-4 rounded-3 ">
+        <div class="container-fluid py-4 bg-white rounded-5">
+          <h1 class="display-5 fw-bold fs-1">Центральный процессор использует систему охлаждения для
+            повышения своей производительности и стабилизации работы</h1>
+          <div class="d-flex flex-column flex-md-row  gap-4  align-items-center ">
+            <div class="8">
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="8-1" value="1">
+
+                <span> Истина </span>
+
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="8-2" value="2">
+
+                <span> Ложь </span>
+
+              </label>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 9 вопрос-->
+    <div class="question">
+
+      <div class="p-3 mb-4 rounded-3 ">
+        <div class="container-fluid py-4 bg-white rounded-5">
+          <h1 class="display-5 fw-bold fs-1">Через какой разъем на материнской плате обычно
+            производится подключение центрального процессора?</h1>
+          <div class="d-flex flex-column flex-md-row  gap-4  align-items-center ">
+            <div class="9">
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="9-1" value="1">
+
+                <span> Socket </span>
+
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="9-2" value="2">
+
+                <span> PCIe </span>
+
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="9-3" value="3">
+                <span> SATA </span>
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                       id="9-4" value="4">
+                <span> USB </span>
+              </label>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- 10 вопрос-->
+    <div class="question">
+
+
+      <!-- 10 вопрос-->
+      <div class="p-3 mb-4 rounded-3 ">
+        <div class="container-fluid py-4 bg-white rounded-5">
+          <h1 class="display-5 fw-bold fs-1">Выберите ведущих производителей центральных процессоров
+            для персональных компьютеров</h1>
+          <div class="d-flex flex-column flex-md-row  gap-4  align-items-center ">
+            <div id="10">
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="checkbox" id="10-1" value="1">
+                <span> AMD </span>
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="checkbox" id="10-2" value="2">
+                <span> Nvidia </span>
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="checkbox" id="10-3" value="3">
+                <span> Mediatek </span>
+              </label>
+
+              <label class="list-group-item d-flex gap-2 py-2 fs-5">
+                <input class="form-check-input flex-shrink-0" type="checkbox" id="10-4" value="4">
+                <span> Intel </span>
+              </label>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-primary btn-lg ms-2" type="submit" id="send_answers">Отправить</button>
+
+
+  </div>
+
+</main>
+
+
+<footer th:insert="~{blocks/footer :: footer}"></footer>
+
+
+<script>
+  document.getElementById('send_answers').addEventListener('click', function() {
+
+    const answers = {}; // Объект для хранения ответов
+
+    const questions = document.querySelectorAll('.question'); // Находим все контейнеры с вопросами
+
+    questions.forEach((questionContainer, index) => {
+      const questionTitle = questionContainer.querySelector('h1').innerText; // Получаем заголовок вопроса
+      const questionInputs = questionContainer.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked');
+
+      let selectedAnswers = Array.from(questionInputs).map(input => input.value).join('');
+
+      // Если ничего не выбрано, добавляем пустую строку
+      if (selectedAnswers.length === '') {
+        selectedAnswers = '';
+      }
+
+      answers[index] = selectedAnswers; // Добавляем ответы в объект
+
+      console.log('Ответы для Вопроса ' + (index + 1) + ' (' + questionTitle + '):', selectedAnswers);
+    });
+
+    console.log('Все ответы:', answers);
+
+    // Отправляем данные на сервер с использованием AJAX запроса
+    const url = '/technoknyaz/testing-system/cpu/process-answers';
+
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(answers)
+    })
+    .then(response => {
+      if (response.ok) {
+        console.log('Ответы успешно отправлены на сервер');
+        // Выполните редирект на нужную страницу в случае успешной отправки ответов
+        window.location.href = '/technoknyaz/testing-system/cpu/results';
+      } else {
+        console.error('Произошла ошибка при отправке ответов');
+      }
+    })
+    .catch(error => console.error('Ошибка:', error));
+
+  });
+</script>
+
+
+</body>
+</html>
