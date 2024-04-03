@@ -26,7 +26,7 @@ public class HibernateUtil {
   public LocalSessionFactoryBean sessionFactory(DataSource dataSource) {
     LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
     sessionFactory.setDataSource(dataSource);
-    sessionFactory.setPackagesToScan("veteroch4k.computer_guide");
+    sessionFactory.setPackagesToScan("com.veteroch4k.computer_guide");
     sessionFactory.setHibernateProperties(hibernateProperties());
     return sessionFactory;
   }
@@ -57,7 +57,7 @@ public class HibernateUtil {
   public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource){
     LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
     em.setDataSource(dataSource);
-    em.setPackagesToScan("veteroch4k.computer_guide");
+    em.setPackagesToScan("com.veteroch4k.computer_guide");
 
     HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
     em.setJpaVendorAdapter(vendorAdapter);

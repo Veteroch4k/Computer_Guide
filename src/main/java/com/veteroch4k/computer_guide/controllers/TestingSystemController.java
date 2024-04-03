@@ -1,6 +1,11 @@
 package com.veteroch4k.computer_guide.controllers;
 
+import com.veteroch4k.computer_guide.dao.Cpu_questionDAO;
+import com.veteroch4k.computer_guide.services.AbstractDAO;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +18,11 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/technoknyaz/testing-system")
 public class TestingSystemController {
 
+  private  Long res = 228L;
+
+  @Autowired
+  private Cpu_questionDAO cpu_questionDAO;
+
   @GetMapping("/cpu")
   public ModelAndView cpu(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Центральный процессор");
@@ -21,14 +31,16 @@ public class TestingSystemController {
 
   }
   @PostMapping("/cpu/process-answers")
-  public ResponseEntity<String> cpuAns(@RequestBody Map<String, String> answers) {
-
+  public ResponseEntity<String> cpuAns(@RequestBody Map<String, String> answers, ModelAndView modelAndView) {
+    List<String> answerValues = new ArrayList<>(answers.values());
+    res = cpu_questionDAO.checkAnswers(answerValues);
     return ResponseEntity.ok("Ответы успешно обработаны");
 
   }
   @GetMapping("/cpu/results")
   public ModelAndView cpuResult(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Результаты");
+    modelAndView.addObject("result", res);
     modelAndView.setViewName("testing-units/results/cpu_answers");
     return modelAndView;
   }
