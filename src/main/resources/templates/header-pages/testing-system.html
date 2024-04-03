@@ -7,9 +7,20 @@
 <header th:replace="~{blocks/header :: header}"></header>
 
 <main>
+  <H1>Система тестирования состоит из 10 разделов, каждый из разделов включает в себя 10 вопросов.</H1>
+  <br>
+  <br>
+  <li class="nav-item"><a th:href="@{/technoknyaz/testing-system/cpu}" class="nav-link ">Центральный процессор</a></li>
+  <li class="nav-item"><a th:href="@{/technoknyaz/testing-system/gpu}" class="nav-link ">Видеокарта</a></li>
+  <li class="nav-item"><a th:href="@{/technoknyaz/testing-system/motherboard}" class="nav-link ">Материнская плата</a></li>
+  <li class="nav-item"><a th:href="@{/technoknyaz/testing-system/powerUnit}" class="nav-link ">Блок питания</a></li>
+  <li class="nav-item"><a th:href="@{/technoknyaz/testing-system/ram}" class="nav-link ">Оперативная память</a></li>
+  <li class="nav-item"><a th:href="@{/technoknyaz/testing-system/storageDevices}" class="nav-link ">Накопители</a></li>
+  <li class="nav-item"><a th:href="@{/technoknyaz/testing-system/сoolingSystem}" class="nav-link ">Система охлаждения</a></li>
+  <br>
+  <br>
 
 </main>
-
 
 <footer  class="fixed-bottom" th:insert="~{blocks/footer :: footer}"></footer>
 
