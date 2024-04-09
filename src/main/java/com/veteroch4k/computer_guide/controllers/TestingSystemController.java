@@ -26,10 +26,12 @@ public class TestingSystemController {
   @GetMapping("/cpu")
   public ModelAndView cpu(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Центральный процессор");
+    modelAndView.addObject("variants", cpu_questionDAO.getVariants(1));
     modelAndView.setViewName("testing-units/questions/central_processor");
     return modelAndView;
 
   }
+
   @PostMapping("/cpu/process-answers")
   public ResponseEntity<String> cpuAns(@RequestBody Map<String, String> answers, ModelAndView modelAndView) {
     List<String> answerValues = new ArrayList<>(answers.values());
@@ -37,10 +39,12 @@ public class TestingSystemController {
     return ResponseEntity.ok("Ответы успешно обработаны");
 
   }
+
   @GetMapping("/cpu/results")
   public ModelAndView cpuResult(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Результаты");
     modelAndView.addObject("result", res);
+    modelAndView.addObject("questions", cpu_questionDAO.getQuestions());
     modelAndView.setViewName("testing-units/results/cpu_answers");
     return modelAndView;
   }
@@ -52,6 +56,7 @@ public class TestingSystemController {
     return modelAndView;
 
   }
+
   @GetMapping("/motherboard")
   public ModelAndView motherboard(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Материнская плата");
@@ -59,6 +64,7 @@ public class TestingSystemController {
     return modelAndView;
 
   }
+
   @GetMapping("/powerUnit")
   public ModelAndView powerUnit(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Блок питания");
@@ -66,6 +72,7 @@ public class TestingSystemController {
     return modelAndView;
 
   }
+
   @GetMapping("/ram")
   public ModelAndView ram(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Оперативная память");
@@ -73,6 +80,7 @@ public class TestingSystemController {
     return modelAndView;
 
   }
+
   @GetMapping("/storageDevices")
   public ModelAndView storageDevices(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Накопители");
@@ -80,6 +88,7 @@ public class TestingSystemController {
     return modelAndView;
 
   }
+
   @GetMapping("/сoolingSystem")
   public ModelAndView сoolingSystem(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Система охлаждения");

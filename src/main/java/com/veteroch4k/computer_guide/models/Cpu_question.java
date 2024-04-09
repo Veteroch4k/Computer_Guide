@@ -9,6 +9,9 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+import org.json.simple.JSONObject;
 
 @Data
 @NoArgsConstructor
@@ -27,6 +30,10 @@ public class Cpu_question {
 
   @Column(name = "answer")
   private String answer;
+
+  @Column(name = "variants")
+  @JdbcTypeCode(SqlTypes.JSON)
+  private JSONObject  jsonVariants;
 
   @Column(name = "description")
   private String description;

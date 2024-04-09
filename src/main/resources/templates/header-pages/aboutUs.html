@@ -1,17 +1,104 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
-
+<html lang="ru">
 <head th:replace="~{blocks/head :: head(title = ${title})}"></head>
-
 <body>
+
+<!-- header -->
 <header th:replace="~{blocks/header :: header}"></header>
+<!-- header -->
+
+<main>
+
+    <!-- body -->
+    <div class="aboutUs">
+
+      <div class="px-4 py-5 my-5 text-center border-top">
+        <h1 class="display-5 fw-bold text-body-emphasis">О нас</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4 fs-3">Добро пожаловать на наш сайт, посвященный техническому наполнению компьютера!</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="b-example-divider"></div>
+
+      <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6 text-center">
+            <i class="bi bi-pc-display-horizontal " style="font-size: 250px"></i>
+          </div>
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Что мы предлагаем</h1>
+            <p class="lead fs-4">Наш сайт содержит обзоры комплектующих компьютера, советы по выбору и сравнительные характеристики различных устройств. Мы также делимся полезными статьями, инструкциями и руководствами, чтобы помочь вам собрать и настроить идеальную конфигурацию компьютера.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="b-example-divider"></div>
+
+      <div class="container px-4 py-5" id="hanging-icons">
+        <h2 class="pb-2 border-bottom">Наша миссия</h2>
+        <p class="text-body-secondary fs-5">Мы стремимся предоставить вам всю необходимую информацию о компонентах компьютера, их функциях и особенностях. Наша цель - помочь вам разобраться в мире технологий и сделать правильный выбор при покупке и апгрейде компьютера.</p>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+              <i class="bi-cpu-fill" ></i>
+            </div>
+            <div>
+              <h3 class="fs-2 text-body-emphasis">Системный блок</h3>
+              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+              <a th:href="@{/technoknyaz/system-unit}" class="btn btn-primary text-white">
+                Перейти
+              </a>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+              <i class="bi-toggles2"></i>
+            </div>
+            <div>
+              <h3 class="fs-2 text-body-emphasis">Периферия</h3>
+              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+              <a th:href="@{/technoknyaz/periphery}" class="btn btn-primary text-white">
+                Перейти
+              </a>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square  text-body-emphasis bg-body-secondary  d-inline-flex  align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+              <i class="bi-tools"></i>
+            </div>        <div>
+            <h3 class="fs-2 text-body-emphasis">Система тестирования</h3>
+            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+            <a th:href="@{/technoknyaz/testing-system}" class="btn btn-primary text-white">
+              Перейти
+            </a>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="b-example-divider"></div>
+
+      <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <h1 class="display-4 fw-bold text-body-emphasis">Связь с нами</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4 fs-5">Если у вас есть вопросы, предложения или вы хотите получить консультацию, не стесняйтесь обращаться к нам. Мы всегда рады помочь и поделиться нашими знаниями с вами! Спасибо, что выбрали наш сайт для изучения технического наполнения компьютера. Мы надеемся, что наш контент будет полезен и интересен для вас!</p>
+        </div>
+      </div>
+
+    </div>
+    <!-- body -->
+
+</main>
 
 
-
-<main>Тут будет основная информация по нашему сайту</main>
-
-
-<footer class="fixed-bottom" th:insert="~{blocks/footer :: footer}"></footer>
+<!-- footer -->
+<footer  th:insert="~{blocks/footer :: footer}"></footer>
+<!-- footer -->
 
 </body>
 </html>
