@@ -26,7 +26,7 @@ public class TestingSystemController {
   @GetMapping("/cpu")
   public ModelAndView cpu(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Центральный процессор");
-    //modelAndView.addObject("variants", cpu_questionDAO.getVariants(1));
+    modelAndView.addObject("variants", cpu_questionDAO.getVariants(1));
     modelAndView.setViewName("testing-units/questions/central_processor");
     return modelAndView;
 

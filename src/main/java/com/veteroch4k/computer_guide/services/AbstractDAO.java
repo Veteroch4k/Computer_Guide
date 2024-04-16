@@ -1,20 +1,25 @@
 package com.veteroch4k.computer_guide.services;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
+import jakarta.transaction.Transactional;
 import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Transactional // Управляемая Spring транзакция
 public abstract class AbstractDAO<T> {
 
   private Class<T> clazz;
 
   @Autowired
   private SessionFactory sessionFactory;
+
+  @PersistenceContext
+  private EntityManager entityManager;
 
   public AbstractDAO(Class<T> clazz) {
     this.clazz = clazz;
@@ -32,21 +37,10 @@ public abstract class AbstractDAO<T> {
         .createQuery("select u.question from " + clazz.getSimpleName() + " u ", clazz).list();
   }
 
-  public List getVariants(int id) {
-
-    List<String> texts = (List<String>) sessionFactory.openSession()
-        .createQuery("SELECT JSON_UNQUOTE(JSON_EXTRACT(JSON_UNQUOTE(t.jsonVariants), '$[*].text')) AS text FROM " + clazz.getSimpleName() + " t WHERE t.id = :id", clazz)
-        .setParameter("id", id)
-        .list();
-
-    List<String> cleanedTexts = new ArrayList<>();
-    for (String text : texts) {
-      String[] sentences = text.split(", ");
-      cleanedTexts.addAll(Arrays.asList(sentences));
-    }
-
-    return cleanedTexts;
-
+  public List<String> getVariants(int id) {
+    String sql = "SELECT jt.text FROM cpu_questions AS t, JSON_TABLE(t.variants, '$[*]' COLUMNS (text VARCHAR(255) PATH '$.text')) AS jt where t.id = 1";
+    Query query = entityManager.createNativeQuery(sql);
+    return query.getResultList();
   }
 }
 

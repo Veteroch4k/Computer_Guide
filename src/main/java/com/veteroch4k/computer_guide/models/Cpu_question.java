@@ -33,7 +33,7 @@ public class Cpu_question {
 
   @Column(name = "variants")
   @JdbcTypeCode(SqlTypes.JSON)
-  private JSONObject  jsonVariants;
+  private JSONObject  variants;
 
   @Column(name = "description")
   private String description;

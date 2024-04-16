@@ -28,6 +28,11 @@ public class HibernateUtil {
     sessionFactory.setDataSource(dataSource);
     sessionFactory.setPackagesToScan("com.veteroch4k.computer_guide");
     sessionFactory.setHibernateProperties(hibernateProperties());
+
+    Properties hibernateProperties = new Properties();
+    hibernateProperties.setProperty("hibernate.current_session_context_class", "thread");
+    sessionFactory.setHibernateProperties(hibernateProperties);
+
     return sessionFactory;
   }
 

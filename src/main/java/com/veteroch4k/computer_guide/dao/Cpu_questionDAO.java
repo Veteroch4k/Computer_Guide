@@ -16,4 +16,14 @@ public class Cpu_questionDAO extends AbstractDAO {
   public Long checkAnswers(List ans) {
     return super.checkAnswers(ans);
   }
+
+  @Override
+  public List getQuestions() {
+    return super.getQuestions();
+  }
+
+  @Override
+  public List getVariants(int id) {
+    return super.getVariants(id);
+  }
 }
