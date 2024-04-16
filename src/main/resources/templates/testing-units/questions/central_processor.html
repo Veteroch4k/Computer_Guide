@@ -15,50 +15,27 @@
 
     <div class="question">
 
-      <div class="p-3 mb-4 rounded-3 ">
-        <div class="container-fluid py-4 bg-white rounded-5">
-          <h1 class="display-5 fw-bold fs-1">Какие функции выполняет центральный процессор?</h1>
-          <div class="d-flex flex-column flex-md-row  gap-4  align-items-center ">
-
-            <div class="1">
-              <label class="list-group-item d-flex gap-2 py-2 fs-5">
-                <input class="form-check-input flex-shrink-0" type="checkbox" id="1-1" value="1">
-                <span> Исполнение арифметических и логических операций </span>
-              </label>
-
-              <label class="list-group-item d-flex gap-2 py-2 fs-5">
-                <input class="form-check-input flex-shrink-0" type="checkbox" id="1-2" value="2">
-                <span> Управление потоками данных в компьютере </span>
-              </label>
-
-              <label class="list-group-item d-flex gap-2 py-2 fs-5">
-                <input class="form-check-input flex-shrink-0" type="checkbox" id="1-3" value="3">
-                <span> Обработка входных и выходных операций </span>
-              </label>
-
-              <label class="list-group-item d-flex gap-2 py-2 fs-5">
-                <input class="form-check-input flex-shrink-0" type="checkbox" id="1-4" value="4">
-                <span> Хранение данных </span>
-              </label>
-
-              <label class="list-group-item d-flex gap-2 py-2 fs-5">
-                <input class="form-check-input flex-shrink-0" type="checkbox" id="1-5" value="5">
-                <span> Контроль за работой других устройств компьютера </span>
-              </label>
-
-              <label class="list-group-item d-flex gap-2 py-2 fs-5">
-                <input class="form-check-input flex-shrink-0" type="checkbox" id="1-6" value="6">
-                <span> Охлаждение системы </span>
-              </label>
+      <!-- Начало цикла -->
+      <div th:each="question : ${questions}" class="question">
+        <div class="p-3 mb-4 rounded-3">
+          <div class="container-fluid py-4 bg-white rounded-5">
+            <h1 th:text="${question}" class="display-5 fw-bold fs-1"></h1>
+            <div class="d-flex flex-column flex-md-row gap-4 align-items-center">
+              <div class="1">
+                <!-- Начало цикла -->
+                <label th:each="variant, i : ${variants}" th:for="${'2-' + (i.index + 1)}" class="list-group-item d-flex gap-2 py-2 fs-5">
+                  <input class="form-check-input flex-shrink-0" th:type="${type == 'radio' ? 'radio' : 'checkbox'}" th:id="${'2-' + (i.index + 1)}" th:name="listGroupRadios-2" th:value="${i.index + 1}">
+                  <span th:text="${variant}"></span>
+                </label>
+                <!-- Конец цикла -->
+              </div>
             </div>
-
           </div>
         </div>
       </div>
+      <!-- Конец цикла -->
 
-    </div>
-
-    <!-- 2 вопрос-->
+      <!-- 2 вопрос-->
     <div class="question">
       <div class="p-3 mb-4 rounded-3">
         <div class="container-fluid py-4 bg-white rounded-5">

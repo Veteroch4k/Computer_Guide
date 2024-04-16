@@ -28,6 +28,9 @@ public class Cpu_question {
   @Column(name = "question")
   private String question;
 
+  @Column(name = "type")
+  private String type;
+
   @Column(name = "answer")
   private String answer;
 

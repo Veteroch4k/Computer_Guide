@@ -26,7 +26,9 @@ public class TestingSystemController {
   @GetMapping("/cpu")
   public ModelAndView cpu(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Центральный процессор");
-    modelAndView.addObject("variants", cpu_questionDAO.getVariants(1));
+    modelAndView.addObject("questions", cpu_questionDAO.getQuestions());
+    modelAndView.addObject("type", cpu_questionDAO.getType());
+    modelAndView.addObject("variants", cpu_questionDAO.getVariants());
     modelAndView.setViewName("testing-units/questions/central_processor");
     return modelAndView;
 
@@ -44,7 +46,6 @@ public class TestingSystemController {
   public ModelAndView cpuResult(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Результаты");
     modelAndView.addObject("result", res);
-    modelAndView.addObject("questions", cpu_questionDAO.getQuestions());
     modelAndView.setViewName("testing-units/results/cpu_answers");
     return modelAndView;
   }
