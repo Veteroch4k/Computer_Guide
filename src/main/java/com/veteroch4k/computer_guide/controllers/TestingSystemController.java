@@ -1,6 +1,7 @@
 package com.veteroch4k.computer_guide.controllers;
 
 import com.veteroch4k.computer_guide.dao.Cpu_questionDAO;
+import com.veteroch4k.computer_guide.dao.Gpu_questionDAO;
 import com.veteroch4k.computer_guide.services.AbstractDAO;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,6 +24,9 @@ public class TestingSystemController {
 
   @Autowired
   private Cpu_questionDAO cpu_questionDAO;
+
+  @Autowired
+  private Gpu_questionDAO gpu_questionDAO;
 
   @GetMapping("/cpu")
   public ModelAndView cpu(ModelAndView modelAndView) {
@@ -55,10 +59,31 @@ public class TestingSystemController {
 
   @GetMapping("/gpu")
   public ModelAndView gpu(ModelAndView modelAndView) {
-    modelAndView.addObject("title", "Графический процессор");
+    modelAndView.addObject("title", "Центральный процессор");
+
+    modelAndView.addObject("questions", gpu_questionDAO.getQuestions());
+    modelAndView.addObject("variants", gpu_questionDAO.getVariants());
+
+    modelAndView.addObject("type", gpu_questionDAO.getType());
     modelAndView.setViewName("testing-units/questions/graphic_card");
     return modelAndView;
 
+  }
+
+  @PostMapping("/gpu/process-answers")
+  public ResponseEntity<String> gpuAns(@RequestBody Map<Integer, String> answers, ModelAndView modelAndView) {
+    List<String> answerValues = new ArrayList<>(answers.values());
+    res = cpu_questionDAO.checkAnswers(answerValues);
+    return ResponseEntity.ok("Ответы успешно обработаны");
+
+  }
+
+  @GetMapping("/gpu/results")
+  public ModelAndView gpuResult(ModelAndView modelAndView) {
+    modelAndView.addObject("title", "Результаты");
+    modelAndView.addObject("result", res);
+    modelAndView.setViewName("testing-units/results/gpu_answers");
+    return modelAndView;
   }
 
   @GetMapping("/motherboard")

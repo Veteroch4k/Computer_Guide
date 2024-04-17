@@ -46,8 +46,10 @@ public abstract class AbstractDAO<T> {
 
   public Map<Integer, List<String>> getVariants() {
     Map<Integer, List<String>> var = new HashMap<>();
-    for(int i = 1; i <= 2; i++) {
-      String sql = "SELECT jt.text FROM cpu_questions AS t, "
+    int n = Math.toIntExact(getRows());
+    String tableName = clazz.getSimpleName().toLowerCase() + "s";
+    for(int i = 1; i <= n; i++) {
+      String sql = "SELECT jt.text FROM " + tableName + " AS t, "
           + "JSON_TABLE(t.variants, '$[*]' COLUMNS (text VARCHAR(255) PATH '$.text')) "
           + "AS jt where t.id = :id";
       Query query = entityManager.createNativeQuery(sql);
@@ -56,6 +58,10 @@ public abstract class AbstractDAO<T> {
     }
 
     return var;
+  }
+
+  private Long getRows() {
+    return (Long) sessionFactory.openSession().createQuery("select count(*) from " + clazz.getSimpleName(), clazz).uniqueResult();
   }
 
 }
