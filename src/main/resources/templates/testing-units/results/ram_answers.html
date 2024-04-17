@@ -1,0 +1,50 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{blocks/head :: head(title = ${title})}">
+</head>
+
+<body>
+<header th:replace="~{blocks/header :: header}"></header>
+
+<main class="bg-light">
+
+  <div class="container py-4" id="cpu">
+
+
+    <div class="answer">
+
+      <div class="p-3 mb-4 rounded-3 ">
+        <div class="container-fluid py-4 bg-white rounded-5">
+          <h1 class="display-5 fw-bold fs-1 align-content-center">Результаты</h1>
+          <div class="d-flex flex-column flex-md-row  gap-4  align-items-center ">
+
+            <h1 th:text="${result}"></h1>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <button class="btn btn-primary btn-lg ms-2" type="button" >Принять</button>
+
+    <div th:each="question : ${questions}">
+      <form>
+        <label th:text="${question}"></label>
+        <input type="text" />
+      </form>
+    </div>
+
+
+  </div>
+
+</main>
+
+
+<footer th:insert="~{blocks/footer :: footer}" class="fixed-bottom"></footer>
+
+
+</body>
+</html>

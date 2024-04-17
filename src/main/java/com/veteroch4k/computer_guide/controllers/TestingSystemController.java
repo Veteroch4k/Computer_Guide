@@ -3,10 +3,9 @@ package com.veteroch4k.computer_guide.controllers;
 import com.veteroch4k.computer_guide.dao.Cpu_questionDAO;
 import com.veteroch4k.computer_guide.dao.Gpu_questionDAO;
 import com.veteroch4k.computer_guide.dao.Motherboard_questionDAO;
-import com.veteroch4k.computer_guide.models.Motherboard_question;
-import com.veteroch4k.computer_guide.services.AbstractDAO;
+import com.veteroch4k.computer_guide.dao.Ram_questionDAO;
+import com.veteroch4k.computer_guide.models.Ram_question;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +31,9 @@ public class TestingSystemController {
 
   @Autowired
   private Motherboard_questionDAO motherboard_questionDAO;
+
+  @Autowired
+  private Ram_questionDAO ram_questionDAO;
 
 
   /** ЦП **/
@@ -69,7 +71,7 @@ public class TestingSystemController {
 
   @GetMapping("/gpu")
   public ModelAndView gpu(ModelAndView modelAndView) {
-    modelAndView.addObject("title", "Центральный процессор");
+    modelAndView.addObject("title", "Графический процессор");
 
     modelAndView.addObject("questions", gpu_questionDAO.getQuestions());
     modelAndView.addObject("variants", gpu_questionDAO.getVariants());
@@ -83,7 +85,7 @@ public class TestingSystemController {
   @PostMapping("/gpu/process-answers")
   public ResponseEntity<String> gpuAns(@RequestBody Map<Integer, String> answers, ModelAndView modelAndView) {
     List<String> answerValues = new ArrayList<>(answers.values());
-    res = cpu_questionDAO.checkAnswers(answerValues);
+    res = gpu_questionDAO.checkAnswers(answerValues);
     return ResponseEntity.ok("Ответы успешно обработаны");
 
   }
@@ -99,7 +101,7 @@ public class TestingSystemController {
   /** Материнская плата **/
   @GetMapping("/motherboard")
   public ModelAndView motherboard(ModelAndView modelAndView) {
-    modelAndView.addObject("title", "Центральный процессор");
+    modelAndView.addObject("title", "Материнская плата");
 
     modelAndView.addObject("questions", motherboard_questionDAO.getQuestions());
     modelAndView.addObject("variants", motherboard_questionDAO.getVariants());
@@ -113,7 +115,7 @@ public class TestingSystemController {
   @PostMapping("/motherboard/process-answers")
   public ResponseEntity<String> motherboardAns(@RequestBody Map<Integer, String> answers, ModelAndView modelAndView) {
     List<String> answerValues = new ArrayList<>(answers.values());
-    res = cpu_questionDAO.checkAnswers(answerValues);
+    res = motherboard_questionDAO.checkAnswers(answerValues);
     return ResponseEntity.ok("Ответы успешно обработаны");
 
   }
@@ -126,20 +128,42 @@ public class TestingSystemController {
     return modelAndView;
   }
 
-  /** **/
-
-  @GetMapping("/powerUnit")
-  public ModelAndView powerUnit(ModelAndView modelAndView) {
-    modelAndView.addObject("title", "Блок питания");
-    modelAndView.setViewName("testing-units/questions/power_unit");
-    return modelAndView;
-
-  }
+  /** Оперативная память **/
 
   @GetMapping("/ram")
   public ModelAndView ram(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Оперативная память");
-    modelAndView.setViewName("testing-units/questions/random_access_memory");
+
+    modelAndView.addObject("questions", ram_questionDAO.getQuestions());
+    modelAndView.addObject("variants", ram_questionDAO.getVariants());
+
+    modelAndView.addObject("type", ram_questionDAO.getType());
+    modelAndView.setViewName("testing-units/questions/ram");
+    return modelAndView;
+
+  }
+
+  @PostMapping("/ram/process-answers")
+  public ResponseEntity<String> ramAns(@RequestBody Map<Integer, String> answers, ModelAndView modelAndView) {
+    List<String> answerValues = new ArrayList<>(answers.values());
+    res = ram_questionDAO.checkAnswers(answerValues);
+    return ResponseEntity.ok("Ответы успешно обработаны");
+
+  }
+
+  @GetMapping("/ram/results")
+  public ModelAndView ramResult(ModelAndView modelAndView) {
+    modelAndView.addObject("title", "Результаты");
+    modelAndView.addObject("result", res);
+    modelAndView.setViewName("testing-units/results/ram_answers");
+    return modelAndView;
+  }
+
+  /**   **/
+  @GetMapping("/powerUnit")
+  public ModelAndView powerUnit(ModelAndView modelAndView) {
+    modelAndView.addObject("title", "Блок питания");
+    modelAndView.setViewName("testing-units/questions/power_unit");
     return modelAndView;
 
   }

@@ -1,0 +1,107 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{blocks/head :: head(title = ${title})}">
+</head>
+
+<body>
+<header th:replace="~{blocks/header :: header}"></header>
+
+<main class="bg-light">
+
+  <div class="container py-4" id="motherboard">
+
+    <div class="question">
+
+      <!-- Начало цикла -->
+
+      <div th:each="question,  i : ${questions}" class="question">
+        <div class="p-3 mb-4 rounded-3">
+          <div class="container-fluid py-4 bg-white rounded-5">
+            <h1 th:text="${question}" class="display-5 fw-bold fs-1"></h1>
+            <div class="d-flex flex-column flex-md-row gap-4 align-items-center">
+              <div class="1">
+
+                <!-- Начало внутреннего цикла -->
+                <div th:each="answer : ${variants.get(i.index +1)}" class="list-group-item d-flex gap-2 py-2 fs-5">
+                  <input class="form-check-input flex-shrink-0"
+                         th:type="${type.get(i.index) == 'radio' ? 'radio' : 'checkbox'}" th:id="${'answer-' + variants.keySet()}" th:name="listGroupRadios-2" th:value="${answer}">
+                  <label th:for="${'answer-' + variants.keySet()}" th:text="${answer}"></label>
+                </div>
+                <!-- Конец внутреннего цикла -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Конец цикла -->
+
+      <button class="btn btn-primary btn-lg ms-2" type="submit" id="send_answers">Отправить</button>
+
+
+    </div>
+
+  </div>
+</main>
+
+
+<footer th:insert="~{blocks/footer :: footer}"></footer>
+
+
+<script>
+
+  document.getElementById('send_answers').addEventListener('click', function() {
+
+    const answers = {}; // Объект для хранения ответов
+
+    const questions = document.querySelectorAll('.question'); // Находим все контейнеры с вопросами
+
+    questions.forEach((questionContainer, index) => {
+      const questionTitle = questionContainer.querySelector('h1').innerText; // Получаем заголовок вопроса
+      const questionInputs = questionContainer.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked');
+
+      let selectedAnswers = Array.from(questionInputs).map(input => input.value).join('');
+
+      // Если ничего не выбрано, добавляем пустую строку
+      if (selectedAnswers.length === '') {
+        selectedAnswers = '';
+      }
+
+      answers[index] = selectedAnswers; // Добавляем ответы в объект
+
+      console.log('Ответы для Вопроса ' + (index + 1) + ' (' + questionTitle + '):', selectedAnswers);
+    });
+
+    console.log('Все ответы:', answers);
+
+    // Отправляем данные на сервер с использованием AJAX запроса
+    const url = '/technoknyaz/testing-system/ram/process-answers';
+
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(answers)
+    })
+
+    .then(response => {
+      if (response.ok) {
+        console.log('Ответы успешно отправлены на сервер');
+        // Выполните редирект на нужную страницу в случае успешной отправки ответов
+        window.location.href = '/technoknyaz/testing-system/ram/results';
+      } else {
+        console.error('Произошла ошибка при отправке ответов');
+      }
+    })
+    .catch(error => console.error('Ошибка:', error));
+
+  });
+
+</script>
+
+
+</body>
+</html>
