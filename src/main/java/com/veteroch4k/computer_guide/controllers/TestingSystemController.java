@@ -3,6 +3,7 @@ package com.veteroch4k.computer_guide.controllers;
 import com.veteroch4k.computer_guide.dao.Cpu_questionDAO;
 import com.veteroch4k.computer_guide.services.AbstractDAO;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,16 +27,18 @@ public class TestingSystemController {
   @GetMapping("/cpu")
   public ModelAndView cpu(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Центральный процессор");
+
     modelAndView.addObject("questions", cpu_questionDAO.getQuestions());
-    modelAndView.addObject("type", cpu_questionDAO.getType());
     modelAndView.addObject("variants", cpu_questionDAO.getVariants());
+
+    modelAndView.addObject("type", cpu_questionDAO.getType());
     modelAndView.setViewName("testing-units/questions/central_processor");
     return modelAndView;
 
   }
 
   @PostMapping("/cpu/process-answers")
-  public ResponseEntity<String> cpuAns(@RequestBody Map<String, String> answers, ModelAndView modelAndView) {
+  public ResponseEntity<String> cpuAns(@RequestBody Map<Integer, String> answers, ModelAndView modelAndView) {
     List<String> answerValues = new ArrayList<>(answers.values());
     res = cpu_questionDAO.checkAnswers(answerValues);
     return ResponseEntity.ok("Ответы успешно обработаны");

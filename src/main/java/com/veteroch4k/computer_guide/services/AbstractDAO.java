@@ -44,15 +44,15 @@ public abstract class AbstractDAO<T> {
         .list();
   }
 
-  public Map<String, List<String>> getVariants() {
-    Map<String, List<String>> var = new HashMap<>();
+  public Map<Integer, List<String>> getVariants() {
+    Map<Integer, List<String>> var = new HashMap<>();
     for(int i = 1; i <= 2; i++) {
       String sql = "SELECT jt.text FROM cpu_questions AS t, "
           + "JSON_TABLE(t.variants, '$[*]' COLUMNS (text VARCHAR(255) PATH '$.text')) "
           + "AS jt where t.id = :id";
       Query query = entityManager.createNativeQuery(sql);
       query.setParameter("id", i);
-      var.put(Integer.toString(i), query.getResultList());
+      var.put(i, query.getResultList());
     }
 
     return var;
