@@ -101,6 +101,7 @@ public class TestingSystemController {
   }
 
   /** Материнская плата **/
+
   @GetMapping("/motherboard")
   public ModelAndView motherboard(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Материнская плата");
@@ -166,6 +167,7 @@ public class TestingSystemController {
   }
 
   /**   **/
+
   @GetMapping("/powerUnit")
   public ModelAndView powerUnit(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Блок питания");

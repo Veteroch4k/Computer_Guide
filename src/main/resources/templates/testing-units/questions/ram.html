@@ -15,20 +15,21 @@
 
       <!-- Начало цикла -->
 
-      <div th:each="question,  i : ${questions}" class="question">
+      <div th:each="question, i : ${questions}" class="question">
         <div class="p-3 mb-4 rounded-3">
           <div class="container-fluid py-4 bg-white rounded-5">
             <h1 th:text="${question}" class="display-5 fw-bold fs-1"></h1>
             <div class="d-flex flex-column flex-md-row gap-4 align-items-center">
               <div class="1">
 
-                <!-- Начало внутреннего цикла -->
-                <div th:each="answer : ${variants.get(i.index +1)}" class="list-group-item d-flex gap-2 py-2 fs-5">
+                <div th:each="answer, j : ${variants.get(i.index + 1)}" class="list-group-item d-flex gap-2 py-2 fs-5">
                   <input class="form-check-input flex-shrink-0"
-                         th:type="${type.get(i.index) == 'radio' ? 'radio' : 'checkbox'}" th:id="${'answer-' + variants.keySet()}" th:name="listGroupRadios-2" th:value="${answer}">
-                  <label th:for="${'answer-' + variants.keySet()}" th:text="${answer}"></label>
+                         th:type="${type.get(i.index) == 'radio' ? 'radio' : 'checkbox'}"
+                         th:id="${'answer-' + i.index + '-' + j.index}"
+                         th:name="${'listGroupRadios-' + i.index}"
+                         th:value="${j.index + 1}"> <!-- Устанавливаем значение из идентификатора ответа -->
+                  <label th:for="${'answer-' + i.index + '-' + j.index}" th:text="${answer}"></label>
                 </div>
-                <!-- Конец внутреннего цикла -->
 
               </div>
             </div>

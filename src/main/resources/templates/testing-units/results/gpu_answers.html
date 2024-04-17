@@ -27,16 +27,7 @@
 
     </div>
 
-
-    <button class="btn btn-primary btn-lg ms-2" type="button" >Принять</button>
-
-    <div th:each="question : ${questions}">
-      <form>
-        <label th:text="${question}"></label>
-        <input type="text" />
-      </form>
-    </div>
-
+    <button class="btn btn-primary btn-lg ms-2" type="button" ><a th:href="@{/technoknyaz/testing-system}" class="nav-link ">Принять</a></button>
 
   </div>
 
