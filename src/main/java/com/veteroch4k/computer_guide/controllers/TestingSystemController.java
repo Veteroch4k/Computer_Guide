@@ -2,6 +2,8 @@ package com.veteroch4k.computer_guide.controllers;
 
 import com.veteroch4k.computer_guide.dao.Cpu_questionDAO;
 import com.veteroch4k.computer_guide.dao.Gpu_questionDAO;
+import com.veteroch4k.computer_guide.dao.Motherboard_questionDAO;
+import com.veteroch4k.computer_guide.models.Motherboard_question;
 import com.veteroch4k.computer_guide.services.AbstractDAO;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,6 +29,12 @@ public class TestingSystemController {
 
   @Autowired
   private Gpu_questionDAO gpu_questionDAO;
+
+  @Autowired
+  private Motherboard_questionDAO motherboard_questionDAO;
+
+
+  /** ЦП **/
 
   @GetMapping("/cpu")
   public ModelAndView cpu(ModelAndView modelAndView) {
@@ -57,6 +65,8 @@ public class TestingSystemController {
     return modelAndView;
   }
 
+  /** Видеокарта **/
+
   @GetMapping("/gpu")
   public ModelAndView gpu(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Центральный процессор");
@@ -86,13 +96,37 @@ public class TestingSystemController {
     return modelAndView;
   }
 
+  /** Материнская плата **/
   @GetMapping("/motherboard")
   public ModelAndView motherboard(ModelAndView modelAndView) {
-    modelAndView.addObject("title", "Материнская плата");
+    modelAndView.addObject("title", "Центральный процессор");
+
+    modelAndView.addObject("questions", motherboard_questionDAO.getQuestions());
+    modelAndView.addObject("variants", motherboard_questionDAO.getVariants());
+
+    modelAndView.addObject("type", motherboard_questionDAO.getType());
     modelAndView.setViewName("testing-units/questions/motherboard");
     return modelAndView;
 
   }
+
+  @PostMapping("/motherboard/process-answers")
+  public ResponseEntity<String> motherboardAns(@RequestBody Map<Integer, String> answers, ModelAndView modelAndView) {
+    List<String> answerValues = new ArrayList<>(answers.values());
+    res = cpu_questionDAO.checkAnswers(answerValues);
+    return ResponseEntity.ok("Ответы успешно обработаны");
+
+  }
+
+  @GetMapping("/motherboard/results")
+  public ModelAndView motherboardResult(ModelAndView modelAndView) {
+    modelAndView.addObject("title", "Результаты");
+    modelAndView.addObject("result", res);
+    modelAndView.setViewName("testing-units/results/motherboard_answers");
+    return modelAndView;
+  }
+
+  /** **/
 
   @GetMapping("/powerUnit")
   public ModelAndView powerUnit(ModelAndView modelAndView) {

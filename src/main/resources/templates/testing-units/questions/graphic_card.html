@@ -77,7 +77,7 @@
     console.log('Все ответы:', answers);
 
     // Отправляем данные на сервер с использованием AJAX запроса
-    const url = '/technoknyaz/testing-system/cpu/process-answers';
+    const url = '/technoknyaz/testing-system/gpu/process-answers';
 
     fetch(url, {
       method: 'POST',
@@ -91,7 +91,7 @@
       if (response.ok) {
         console.log('Ответы успешно отправлены на сервер');
         // Выполните редирект на нужную страницу в случае успешной отправки ответов
-        window.location.href = '/technoknyaz/testing-system/cpu/results';
+        window.location.href = '/technoknyaz/testing-system/gpu/results';
       } else {
         console.error('Произошла ошибка при отправке ответов');
       }
