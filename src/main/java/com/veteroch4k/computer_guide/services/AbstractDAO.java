@@ -4,9 +4,13 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 import jakarta.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,10 +32,20 @@ public abstract class AbstractDAO<T> {
   }
 
   public Long checkAnswers(List<String> ans) {
-    return (Long) (sessionFactory.openSession().createQuery(
-        "select count(*) from " + clazz.getSimpleName() + " u where u.answer in (:answers)", clazz))
-        .setParameterList("answers", ans)
-        .uniqueResult();
+    Long res = 0L;
+    Session session = sessionFactory.openSession();
+    try {
+      for(int i = 0; i < ans.size(); i++) {
+        Query query = session.createQuery(
+                "select count(*) from " + clazz.getSimpleName() + " u where u.id = :id and u.answer = :answer")
+            .setParameter("id", i + 1)  // Строгое сравнение ответа с соответствующей строкой в таблице
+            .setParameter("answer", ans.get(i));  // Ответ из списка
+        res += (Long) ((org.hibernate.query.Query<?>) query).uniqueResult();
+      }
+    } finally {
+      session.close();
+    }
+    return res;
   }
 
   public List<T> getQuestions() {

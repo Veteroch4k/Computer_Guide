@@ -21,7 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/technoknyaz/testing-system")
 public class TestingSystemController {
 
-  private  Long res = 228L;
+  private  Long res = 0L;
 
   @Autowired
   private Cpu_questionDAO cpu_questionDAO;
@@ -54,6 +54,7 @@ public class TestingSystemController {
   @PostMapping("/cpu/process-answers")
   public ResponseEntity<String> cpuAns(@RequestBody Map<Integer, String> answers, ModelAndView modelAndView) {
     List<String> answerValues = new ArrayList<>(answers.values());
+    answerValues.remove(0);
     res = cpu_questionDAO.checkAnswers(answerValues);
     return ResponseEntity.ok("Ответы успешно обработаны");
 
@@ -85,6 +86,7 @@ public class TestingSystemController {
   @PostMapping("/gpu/process-answers")
   public ResponseEntity<String> gpuAns(@RequestBody Map<Integer, String> answers, ModelAndView modelAndView) {
     List<String> answerValues = new ArrayList<>(answers.values());
+    answerValues.remove(0);
     res = gpu_questionDAO.checkAnswers(answerValues);
     return ResponseEntity.ok("Ответы успешно обработаны");
 
@@ -115,6 +117,8 @@ public class TestingSystemController {
   @PostMapping("/motherboard/process-answers")
   public ResponseEntity<String> motherboardAns(@RequestBody Map<Integer, String> answers, ModelAndView modelAndView) {
     List<String> answerValues = new ArrayList<>(answers.values());
+    answerValues.remove(0);
+
     res = motherboard_questionDAO.checkAnswers(answerValues);
     return ResponseEntity.ok("Ответы успешно обработаны");
 
@@ -146,6 +150,8 @@ public class TestingSystemController {
   @PostMapping("/ram/process-answers")
   public ResponseEntity<String> ramAns(@RequestBody Map<Integer, String> answers, ModelAndView modelAndView) {
     List<String> answerValues = new ArrayList<>(answers.values());
+    answerValues.remove(0);
+
     res = ram_questionDAO.checkAnswers(answerValues);
     return ResponseEntity.ok("Ответы успешно обработаны");
 
