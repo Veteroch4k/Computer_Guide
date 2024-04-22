@@ -8,69 +8,74 @@
 	<header th:replace="~{blocks/header :: header}"></header>
   <!-- header -->
 
+	<main class="mt-5 border-top">
 
-  <!-- body -->
-  <div class="bodz">
-	  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-		  <div class="carousel-inner">
-			  <div class="carousel-item active">
-				  <img th:src="@{/img/DEXPaquilion.jpg}" class="d-block w-100" alt="nout">
-			  </div>
-			  <div class="carousel-item" data-bs-interval="2000">
-				  <img th:src="@{/img/DEXPaquilion1.jpg}" class="d-block w-100" alt="nout">
-			  </div>
-			  <div class="carousel-item">
-				  <img th:src="@{/img/DEXPaquilion2.jpg}" class="d-block w-100" alt="nout">
-			  </div>
-		  </div>
-		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="prev">
-			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			  <span class="visually-hidden">Предыдущий</span>
-		  </button>
-		  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="next">
-			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			  <span class="visually-hidden">Следующий</span>
-		  </button>
-	  </div>
-	  <div class="textic">
-		  <a class="silca" href="#"><b>Full HD (1920x1080), IPS, Intel Celeron N4020, ядра: 2 х 1.1 ГГц, RAM 8 ГБ, SSD 128 ГБ, Intel UHD Graphics 600 , Windows 11 Home Single Language.</b></a>
-		  <p>
-			  Ноутбук DEXP Aquilon оборудован сенсорным NumPad, который упрощает ввод числовой информации. Осуществляйте навигацию между несколькими окнами и не отказывайтесь от использования требовательных приложений. Высокую скорость работы будет поддерживать 2-ядерный процессор Intel Celeron N4020. Видеокарта Intel UHD Graphics 600 улучшит качество графики при обработке материалов в редакторах.
-			  Ноутбуку DEXP Aquilon вы доверите трансляцию кинолент и роликов. Экран диагональю 14.1 дюйм сконструирован по технологии IPS. Ее основная задача заключается в усилении контрастности изображений и расширении углов обзора. Синхронизация внешней периферии займет не более нескольких минут. Достаточно воспользоваться интерфейсом Bluetooth 4.2. Ускорить передачу файлов с накопителя позволит разъем USB 3.2.
-		  </p>
-	  </div>
-  </div>
-  <div class="bodz">
-	  <div id="carouselExampleDark_1" class="carousel carousel-dark slide" data-bs-ride="carousel">
-		  <div class="carousel-inner">
-			  <div class="carousel-item active">
-				  <img th:src="@{/img/ChuwiGemi.jpg}" class="d-block w-100" alt="nout">
-			  </div>
-			  <div class="carousel-item" data-bs-interval="2000">
-				  <img th:src="@{/img/ChuwiGemi1.jpg}" class="d-block w-100" alt="nout">
-			  </div>
-			  <div class="carousel-item">
-				  <img th:src="@{/img/ChuwiGemi3.jpg}" class="d-block w-100" alt="nout">
-			  </div>
-		  </div>
-		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark_1"  data-bs-slide="prev">
-			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			  <span class="visually-hidden">Предыдущий</span>
-		  </button>
-		  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark_1"  data-bs-slide="next">
-			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			  <span class="visually-hidden">Следующий</span>
-		  </button>
-	  </div>
-	  <div class="textic">
-		  <a class="silca" href="#"><b>Full HD (1920x1080), IPS, Intel Processor N100, + 4, RAM 8 ГБ, SSD 256 ГБ, Intel UHD Graphics , Windows 11 Home.</b></a>
-		  <p>
-			  Ноутбук Chuwi GemiBook Xpro с весом 1.46 кг и толщиной 19 мм компактный и эргономичный. Вы сможете брать его с собой на учебу, работу и в поездки. Ноутбук оптимизирован для решения ежедневных вычислительных задач – работа с офисными редакторами, запуск веб-страниц, просмотр мультимедийного контента. Поддержка стандартов DirectX 12 и OpenGL 4.5 предусматривает запуск игр в средних настройках графики.
-			  На экране 14.1 дюйма благодаря панели IPS FullHD отображается яркое и четкое изображение с точной передачей оттенков. Матовое покрытие предотвращает блики от внешних источников света. Веб-камера 2 Мп и микрофон предоставляют возможность общения по видеосвязи. Для подключения игрового контролера и обмена данными с мобильными устройствами реализована технология Bluetooth. Модуль Wi-Fi гарантирует стабильный беспроводной доступ к Интернету. Одного заряда аккумулятора хватает до 10 часов автономности Chuwi GemiBook Xpro.
-		  </p>
-	  </div>
-  </div>
-  <!-- body -->
+		<!-- body -->
+		<div class="bodz">
+			<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img th:src="@{/img/DEXPaquilion.jpg}" class="d-block w-100" alt="nout">
+					</div>
+					<div class="carousel-item" data-bs-interval="2000">
+						<img th:src="@{/img/DEXPaquilion1.jpg}" class="d-block w-100" alt="nout">
+					</div>
+					<div class="carousel-item">
+						<img th:src="@{/img/DEXPaquilion2.jpg}" class="d-block w-100" alt="nout">
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Предыдущий</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Следующий</span>
+				</button>
+			</div>
+			<div class="textic">
+				<a class="silca" href="#"><b>Full HD (1920x1080), IPS, Intel Celeron N4020, ядра: 2 х 1.1 ГГц, RAM 8 ГБ, SSD 128 ГБ, Intel UHD Graphics 600 , Windows 11 Home Single Language.</b></a>
+				<p>
+					Ноутбук DEXP Aquilon оборудован сенсорным NumPad, который упрощает ввод числовой информации. Осуществляйте навигацию между несколькими окнами и не отказывайтесь от использования требовательных приложений. Высокую скорость работы будет поддерживать 2-ядерный процессор Intel Celeron N4020. Видеокарта Intel UHD Graphics 600 улучшит качество графики при обработке материалов в редакторах.
+					Ноутбуку DEXP Aquilon вы доверите трансляцию кинолент и роликов. Экран диагональю 14.1 дюйм сконструирован по технологии IPS. Ее основная задача заключается в усилении контрастности изображений и расширении углов обзора. Синхронизация внешней периферии займет не более нескольких минут. Достаточно воспользоваться интерфейсом Bluetooth 4.2. Ускорить передачу файлов с накопителя позволит разъем USB 3.2.
+				</p>
+			</div>
+		</div>
+		<div class="bodz">
+			<div id="carouselExampleDark_1" class="carousel carousel-dark slide" data-bs-ride="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img th:src="@{/img/ChuwiGemi.jpg}" class="d-block w-100" alt="nout">
+					</div>
+					<div class="carousel-item" data-bs-interval="2000">
+						<img th:src="@{/img/ChuwiGemi1.jpg}" class="d-block w-100" alt="nout">
+					</div>
+					<div class="carousel-item">
+						<img th:src="@{/img/ChuwiGemi3.jpg}" class="d-block w-100" alt="nout">
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark_1"  data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Предыдущий</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark_1"  data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Следующий</span>
+				</button>
+			</div>
+			<div class="textic">
+				<a class="silca" href="#"><b>Full HD (1920x1080), IPS, Intel Processor N100, + 4, RAM 8 ГБ, SSD 256 ГБ, Intel UHD Graphics , Windows 11 Home.</b></a>
+				<p>
+					Ноутбук Chuwi GemiBook Xpro с весом 1.46 кг и толщиной 19 мм компактный и эргономичный. Вы сможете брать его с собой на учебу, работу и в поездки. Ноутбук оптимизирован для решения ежедневных вычислительных задач – работа с офисными редакторами, запуск веб-страниц, просмотр мультимедийного контента. Поддержка стандартов DirectX 12 и OpenGL 4.5 предусматривает запуск игр в средних настройках графики.
+					На экране 14.1 дюйма благодаря панели IPS FullHD отображается яркое и четкое изображение с точной передачей оттенков. Матовое покрытие предотвращает блики от внешних источников света. Веб-камера 2 Мп и микрофон предоставляют возможность общения по видеосвязи. Для подключения игрового контролера и обмена данными с мобильными устройствами реализована технология Bluetooth. Модуль Wi-Fi гарантирует стабильный беспроводной доступ к Интернету. Одного заряда аккумулятора хватает до 10 часов автономности Chuwi GemiBook Xpro.
+				</p>
+			</div>
+		</div>
+		<!-- body -->
+
+
+	</main>
+
 
   <!-- footer -->
   <footer th:insert="~{blocks/footer :: footer}"></footer>

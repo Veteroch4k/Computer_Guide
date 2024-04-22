@@ -38,7 +38,6 @@
 		margin-bottom: 20px;
 	}
 
-	.background
 	.silca {
 		color: black;
 		text-decoration: none;
@@ -57,4 +56,9 @@
 	.palec {
 		margin-left: 15px;
 		color: white;
+	}
+	.btn-rounded {
+		border-radius: 50px;
+		-webkit-border-radius: 50px;
+		-moz-border-radius: 50px;
 	}
