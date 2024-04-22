@@ -5,8 +5,10 @@
 
 <body>
   <!-- header -->
-	<header th:replace="~{blocks/header :: header}"></header>
   <!-- header -->
+
+	<header th:replace="~{blocks/header :: header}"></header>
+
 
 	<main class="mt-5 border-top">
 
@@ -25,39 +27,94 @@
 
 			<div class="b-index-divider bg-white"></div>
 
+
+			<!-- Навигационная панель -->
+			<div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary fixed-top invisible" style="width: 280px;">
+				<hr>
+				<ul class="nav nav-pills flex-column mb-auto">
+					<li class="nav-item">
+						<a href="#" class="nav-link active" aria-current="page">
+							<svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+							Сетапы
+						</a>
+					</li>
+					<li>
+						<a href="#" class="nav-link link-body-emphasis">
+							<svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+							Комплектующие
+						</a>
+					</li>
+					<li>
+						<a href="#" class="nav-link link-body-emphasis">
+							<svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+							Периферия
+						</a>
+					</li>
+					<li>
+						<a href="#" class="nav-link link-body-emphasis">
+							<svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+							Тесты
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- Навигационная панель -->
+
+
 			<div class="container px-4 py-5 ">
-				<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+				<div class="align-items-center py-5">
 					<h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 text-center">СЕТАПЫ</h1>
 				</div>
-			</div>
 
-			<div class="b-index-divider bg-white"></div>
+				<div class="row row-cols-sm-2 g-4">
+					<div class="col">
+						<img class="bd-placeholder-img card-img-top rounded-5 " th:src="@{/img/setups/chip-setup-shadow.png}">
+						<p CLASS="text-center lead fs-4">БЮДЖЕТНЫЙ</p>
 
-			<div class="container px-4 py-5">
-				<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-					<div class="col-10 col-sm-8 col-lg-6 text-center">
-						<i class="bi bi-pc-display-horizontal " style="font-size: 250px"></i>
 					</div>
-					<div class="col-lg-6">
-						<h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Что мы предлагаем</h1>
-						<p class="lead fs-4">Наш сайт содержит обзоры комплектующих компьютера, советы по выбору и сравнительные характеристики различных устройств. Мы также делимся полезными статьями, инструкциями и руководствами, чтобы помочь вам собрать и настроить идеальную конфигурацию компьютера.</p>
+
+					<div class="col">
+						<img class="bd-placeholder-img card-img-top rounded-5 " th:src="@{/img/setups/striming-setup-shadow.png}">
+						<p CLASS="text-center lead fs-4">СТРИМЕРСКИЙ</p>
+
 					</div>
+
+					<div class="col">
+						<img class="bd-placeholder-img card-img-top rounded-5 " th:src="@{/img/setups/play-setup-shadow.png}">
+						<p CLASS="text-center lead fs-4">ИГРОВОЙ</p>
+
+					</div>
+
+					<div class="col">
+						<img class="bd-placeholder-img card-img-top rounded-5 " th:src="@{/img/setups/mini-setup-shadow.png}">
+						<p CLASS="text-center lead fs-4">МИНИ ПК</p>
+
+					</div>
+
 				</div>
 			</div>
 
 			<div class="b-index-divider bg-white"></div>
 
-			<div class="container px-4 py-5">
-				<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-					<div class="col-10 col-sm-8 col-lg-6 text-center">
-						<i class="bi bi-pc-display-horizontal " style="font-size: 250px"></i>
-					</div>
-					<div class="col-lg-6">
-						<h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Что мы предлагаем</h1>
-						<p class="lead fs-4">Наш сайт содержит обзоры комплектующих компьютера, советы по выбору и сравнительные характеристики различных устройств. Мы также делимся полезными статьями, инструкциями и руководствами, чтобы помочь вам собрать и настроить идеальную конфигурацию компьютера.</p>
-					</div>
+			<div class="container px-4 py-5 ">
+				<div class="align-items-center g-5 py-5">
+					<h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 text-center">КОМПЛЕКТУЮЩИЕ</h1>
 				</div>
 			</div>
+
+
+			<div class="b-index-divider bg-white"></div>
+
+			<div class="container px-4 py-5 ">
+				<div class="align-items-center g-5 py-5">
+					<h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 text-center">ПЕРИФЕРИЯ</h1>
+				</div>
+			</div>
+
+
+			</div>
+
+
 		</div>
 
 		<!-- body -->
