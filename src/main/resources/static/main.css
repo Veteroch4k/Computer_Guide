@@ -196,4 +196,32 @@
 		font-style: normal;
 	}
 
+	/* Подсветка кнопок */
+
+	.highlight-on-hover-btn:hover {
+		background-color: #654187; /* Новый цвет фона при наведении */
+	}
+
+
+	/* Подсветка картинок */
+
+	.highlight-on-hover {
+		transition: filter 0.3s ease-in-out;
+	}
+
+	.highlight-on-hover:hover {
+		filter: drop-shadow(0px 0px 10px #f7624a);
+	}
+
+	/* Подсветка картинок + увеличение*/
+
+	.highlight-and-zoom-on-hover {
+		transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+	}
+
+	.highlight-and-zoom-on-hover:hover {
+		filter: drop-shadow(0px 0px 10px #f7624a);
+		transform: scale(1.1); /* Увеличиваем изображение на 10% */
+	}
+
 
