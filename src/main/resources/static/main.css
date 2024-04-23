@@ -169,6 +169,8 @@
 		height: 3rem;
 	}
 
+	/* Шрифты  */
+
 	.fjalla-one-regular {
 		font-family: "Fjalla One", sans-serif;
 		font-weight: 400;
@@ -184,6 +186,8 @@
 		font-weight: 700;
 		font-style: normal;
 	}
+
+	/* Шрифты  */
 
 	h1, h2, h3, h4, h5, h6 {
 		font-family: "Fjalla One", sans-serif;
@@ -210,7 +214,7 @@
 	}
 
 	.highlight-on-hover:hover {
-		filter: drop-shadow(0px 0px 10px #f7624a);
+		filter: drop-shadow(0px 0px 10px blueviolet);
 	}
 
 	/* Подсветка картинок + увеличение*/
@@ -220,8 +224,13 @@
 	}
 
 	.highlight-and-zoom-on-hover:hover {
-		filter: drop-shadow(0px 0px 10px #f7624a);
+		filter: drop-shadow(0px 0px 10px blueviolet);
 		transform: scale(1.1); /* Увеличиваем изображение на 10% */
+	}
+
+	.btn-primary a:hover {
+		background-color: #7752b0;
+		color: darkgrey;
 	}
 
 
