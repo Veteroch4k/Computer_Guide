@@ -66,26 +66,36 @@
 
 				<div class="row row-cols-sm-2 g-4">
 					<div class="col">
-						<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/setups/chip-setup-shadow.png}">
-						<p CLASS="text-center lead fs-4">БЮДЖЕТНЫЙ</p>
+						<a th:href="@{/technoknyaz/setups/cheap-setup}">
+							<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/setups/chip-setup-shadow.png}">
+						</a>
+						<p  class="text-center lead fs-4">БЮДЖЕТНЫЙ</p>
 
 					</div>
 
 					<div class="col">
-						<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/setups/striming-setup-shadow.png}">
-						<p CLASS="text-center lead fs-4">СТРИМЕРСКИЙ</p>
+						<a  th:href="@{/technoknyaz/setups/streaming-setup}">
+							<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/setups/striming-setup-shadow.png}">
+						</a>
+						<p class="text-center lead fs-4">СТРИМЕРСКИЙ</p>
 
 					</div>
 
 					<div class="col">
-						<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/setups/play-setup-shadow.png}">
-						<p CLASS="text-center lead fs-4">ИГРОВОЙ</p>
+
+						<a th:href="@{/technoknyaz/setups/gaming-setup}" >
+							<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/setups/play-setup-shadow.png}">
+						</a>
+						<p class="text-center lead fs-4">ИГРОВОЙ</p>
 
 					</div>
 
 					<div class="col">
-						<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/setups/mini-setup-shadow.png}">
-						<p CLASS="text-center lead fs-4">МИНИ ПК</p>
+
+						<a  th:href="@{/technoknyaz/setups/mini-setup}">
+							<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/setups/mini-setup-shadow.png}">
+						</a>
+						<p  class="text-center lead fs-4">МИНИ ПК</p>
 
 					</div>
 
@@ -101,38 +111,49 @@
 
 				<div class="row row-cols-sm-3 g-4">
 					<div class="col">
-						<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/components/cpu.png}">
-
+						<a th:href="@{/technoknyaz/components/cpu}">
+							<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/components/cpu.png}">
+						</a>
 						<p CLASS="text-center lead fs-4">ПРОЦЕССОР</p>
 
 					</div>
 
 					<div class="col">
-						<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/components/gpu.png}">
+						<a th:href="@{/technoknyaz/components/gpu}">
+							<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/components/gpu.png}">
+						</a>
 						<p CLASS="text-center lead fs-4">ВИДЕОКАРТА</p>
 
 					</div>
 
 					<div class="col">
-						<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/components/memory.png}">
+						<a th:href="@{/technoknyaz/components/ram}">
+							<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/components/memory.png}">
+						</a>
 						<p CLASS="text-center lead fs-4">ОПЕРАТИВНАЯ ПАМЯТЬ</p>
 
 					</div>
 
 					<div class="col">
-						<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/components/motherboard.png}">
+						<a th:href="@{/technoknyaz/components/motherboard}">
+							<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/components/motherboard.png}">
+						</a>
 						<p CLASS="text-center lead fs-4">МАТЕРИНСКАЯ ПЛАТА</p>
 
 					</div>
 
 					<div class="col">
-						<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/components/hdd.png}">
-						<p CLASS="text-center lead fs-4">ЖЕСТКИЙ ДИСК</p>
+						<a th:href="@{/technoknyaz/components/storage_devices}">
+							<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/components/hdd.png}">
+						</a>
+						<p CLASS="text-center lead fs-4">Накопители</p>
 
 					</div>
 
 					<div class="col">
-						<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/components/power.png}">
+						<a th:href="@{/technoknyaz/components/power}">
+							<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/components/power.png}">
+						</a>
 						<p CLASS="text-center lead fs-4">БЛОК ПИТАНИЯ</p>
 
 					</div>
@@ -144,14 +165,18 @@
 					</div>
 
 					<div class="col">
-						<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/components/tower.png}">
+						<a th:href="@{/technoknyaz/components/сooling-system}">
+							<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/components/tower.png}">
+						</a>
 						<p CLASS="text-center lead fs-4">ОХЛАЖДЕНИЕ</p>
 
 					</div>
 
 					<div class="col">
-						<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/components/box.png}">
-						<p CLASS="text-center lead fs-4">СИСТЕМНИК</p>
+						<a th:href="@{/technoknyaz/components/system-unit}">
+							<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/components/box.png}">
+						</a>
+						<p CLASS="text-center lead fs-4">КОРПУС</p>
 
 					</div>
 
@@ -170,39 +195,50 @@
 
 				<div class="row row-cols-sm-3 g-4">
 					<div class="col">
-						<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/periphery/keyboard.png}">
-
-						<p CLASS="text-center lead fs-4">КЛАВИАТУРА</p>
-
-					</div>
-
-					<div class="col">
-						<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/periphery/mouse.png}">
-						<p CLASS="text-center lead fs-4">МЫШКА</p>
+						<a th:href="@{/technoknyaz/periphery/keyboard}">
+							<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/periphery/keyboard.png}">
+						</a>
+						<p class="text-center lead fs-4">КЛАВИАТУРА</p>
 
 					</div>
 
 					<div class="col">
-						<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/periphery/headphone.png}">
-						<p CLASS="text-center lead fs-4">НАУШНИКИ</p>
+						<a th:href="@{/technoknyaz/periphery/mouse}">
+							<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/periphery/mouse.png}">
+						</a>
+						<p class="text-center lead fs-4">МЫШКА</p>
 
 					</div>
 
 					<div class="col">
-						<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/periphery/monitor.png}">
-						<p CLASS="text-center lead fs-4">МОНИТОР</p>
+						<a th:href="@{/technoknyaz/periphery/headphones}">
+							<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/periphery/headphone.png}">
+						</a>
+						<p class="text-center lead fs-4">НАУШНИКИ</p>
 
 					</div>
 
 					<div class="col">
-						<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/periphery/jostic.png}">
-						<p CLASS="text-center lead fs-4">ГЕЙМПАД</p>
+						<a th:href="@{/technoknyaz/periphery/monitor}">
+							<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/periphery/monitor.png}">
+						</a>
+						<p class="text-center lead fs-4">МОНИТОР</p>
 
 					</div>
 
 					<div class="col">
-						<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/periphery/cam.png}">
-						<p CLASS="text-center lead fs-4">ВЕБ-КАМЕРА</p>
+						<a th:href="@{/technoknyaz/periphery/gamepad}">
+							<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/periphery/jostic.png}">
+						</a>
+						<p class="text-center lead fs-4">ГЕЙМПАД</p>
+
+					</div>
+
+					<div class="col">
+						<a th:href="@{/technoknyaz/periphery/camera}">
+							<img class="bd-placeholder-img card-img-top rounded-5 highlight-and-zoom-on-hover" th:src="@{/img/periphery/cam.png}">
+						</a>
+						<p class="text-center lead fs-4">ВЕБ-КАМЕРА</p>
 
 					</div>
 
