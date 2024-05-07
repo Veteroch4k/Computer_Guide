@@ -6,143 +6,143 @@
 
 <header th:replace="~{blocks/header :: header}"></header>
 
-<section class="py-5 text-center container">
-  <div class="row py-lg-5">
-    <div class="col-lg-6 col-md-8 mx-auto">
-      <h1 class="fw-light">Содержание</h1>
-      <p class="lead ">Система тестирования состоит из 7 разделов, каждый из разделов включает в себя 10-12 вопросов.</p>
+
+<main class="mt-5 border-top">
+
+  <div class="container px-4 py-5">
+
+    <div class="py-5 my-5 border-top">
+      <h1 class="display-5 fw-bold text-body-emphasis fs-1 text-center">Что такое процессор (CPU)</h1>
+      <!-- Краткая характеристика -->
+
+      <div class="row align-items-center">
+        <div class="col-12 align-self-center">
+          <p class="fs-4">
+            В статье расскажем о том, что такое ЦП (центральный процессор), рассмотрим функции процессора и разберем как он работает.
+
+          </p>
+        </div>
+      </div>
     </div>
   </div>
-</section>
-
-<div class="album py-5 bg-body-tertiary">
-  <div class="container">
-
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <div class="col">
-        <div class="card shadow-sm">
-          <img class="bd-placeholder-img card-img-top" th:src="@{/img/details/cpu.jpg}">
-          <div class="card-body">
-            <p class="card-text">Центральный процессор</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" style="background-color: #7752b0" class="btn btn-primary text-white rounded-pill"><a th:href="@{/technoknyaz/testing-system/cpu}" class="nav-link ">Перейти</a></button>
-              </div>
-              <small class="text-body-secondary">1</small>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card shadow-sm">
-          <img class="bd-placeholder-img card-img-top" th:src="@{/img/details/video_card.jpg}">
-          <div class="card-body">
-            <p class="card-text">Видеокарта</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" style="background-color: #7752b0" class="btn btn-primary text-white rounded-pill"><a th:href="@{/technoknyaz/testing-system/gpu}" class="nav-link ">Перейти</a></button>
-              </div>
-              <small class="text-body-secondary">2</small>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card shadow-sm">
-          <img class="bd-placeholder-img card-img-top" th:src="@{/img/details/motherboard.jpg}">
-          <div class="card-body">
-            <p class="card-text">Материнская плата</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" style="background-color: #7752b0" class="btn btn-primary text-white rounded-pill"><a th:href="@{/technoknyaz/testing-system/motherboard}" class="nav-link ">Перейти</a></button>
-              </div>
-              <small class="text-body-secondary">3</small>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card shadow-sm">
-          <img class="bd-placeholder-img card-img-top" th:src="@{/img/details/power_unit.jpg}">
-          <div class="card-body">
-            <p class="card-text">Блок питания</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" style="background-color: #7752b0" class="btn btn-primary text-white rounded-pill"><a th:href="@{/technoknyaz/testing-system/powerUnit}" class="nav-link ">Перейти</a></button>
-              </div>
-              <small class="text-body-secondary">4</small>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card shadow-sm">
-          <img class="bd-placeholder-img card-img-top" th:src="@{/img/details/ram.jpg}">
-          <div class="card-body">
-            <p class="card-text">Оперативная память</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" style="background-color: #7752b0" class="btn btn-primary text-white rounded-pill"><a th:href="@{/technoknyaz/testing-system/ram}" class="nav-link ">Перейти</a></button>
-              </div>
-              <small class="text-body-secondary">5</small>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card shadow-sm">
-          <img class="bd-placeholder-img card-img-top" th:src="@{/img/details/storage_device.jpg}">
-          <div class="card-body">
-            <p class="card-text">Накопители</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" style="background-color: #7752b0" class="btn btn-primary text-white rounded-pill"><a th:href="@{/technoknyaz/testing-system/storageDevices}" class="nav-link ">Перейти</a></button>
-              </div>
-              <small class="text-body-secondary">6</small>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col invisible">
-        <div class="card shadow-sm">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: صورة مصغرة" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
-          <div class="card-body">
-            <p class="card-text"></p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-secondary"></button>
-                <button type="button" class="btn btn-sm btn-secondary"></button>
-              </div>
-              <small class="text-body-secondary">9</small>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card shadow-sm">
-          <img class="bd-placeholder-img card-img-top" th:src="@{/img/details/cooler.jpg}">
-          <div class="card-body">
-            <p class="card-text">Система охлаждения</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" style="background-color: #7752b0" class="btn btn-primary text-white rounded-pill"><a th:href="@{/technoknyaz/testing-system/сoolingSystem}" class="nav-link ">Перейти</a></button>
-              </div>
-              <small class="text-body-secondary">7</small>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
   </div>
-</div>
+
+
+
+
+  <div class="b-example-divider"></div>
+
+  <div class="container px-lg-5 py-5">
+
+    <div class="py-5 my-5  border-top">
+      <h1 class="display-5 fw-bold text-body-emphasis fs-1 text-center">Что делает процессор</h1>
+      <!-- Краткая характеристика -->
+      <p>
+        В статье расскажем о том, что такое ЦП (центральный процессор), рассмотрим функции процессора и разберем как он работает.
+
+        Процессор – это устройство, отвечающее за обработку информации. Его называют по-разному: центральный процессор (ЦП) или центральное процессорное устройство (ЦПУ) или central processing unit (CPU), но все эти термины обозначают элемент, который является “мозгом” вычислительного устройства (смартфона, телевизора, компьютера, планшета, фотоаппарата, сервера).
+
+        Процессор представляет собой квадратную пластину со стороной около 5 сантиметров, с одной стороны которой находятся, похожие на ножки, коннекторы. С их помощью он прикрепляется к материнской плате – специальному элементу для установки дополнительных расширений.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="b-example-divider"></div>
+
+  <div class="container px-4 py-5">
+
+    <div class="py-5 my-5  border-top">
+      <h1 class="display-5 fw-bold text-body-emphasis fs-1 text-center">Из чего состоит процессор</h1>
+      <!-- Краткая характеристика -->
+      <p>
+        В статье расскажем о том, что такое ЦП (центральный процессор), рассмотрим функции процессора и разберем как он работает.
+
+        Процессор – это устройство, отвечающее за обработку информации. Его называют по-разному: центральный процессор (ЦП) или центральное процессорное устройство (ЦПУ) или central processing unit (CPU), но все эти термины обозначают элемент, который является “мозгом” вычислительного устройства (смартфона, телевизора, компьютера, планшета, фотоаппарата, сервера).
+
+        Процессор представляет собой квадратную пластину со стороной около 5 сантиметров, с одной стороны которой находятся, похожие на ножки, коннекторы. С их помощью он прикрепляется к материнской плате – специальному элементу для установки дополнительных расширений.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="b-example-divider"></div>
+
+  <div class="container px-4 py-5">
+
+    <div class="py-5 my-5  border-top">
+      <h1 class="display-5 fw-bold text-body-emphasis fs-1 text-center">Основные характеристики процессоров</h1>
+      <!-- Краткая характеристика -->
+      <p>
+        В статье расскажем о том, что такое ЦП (центральный процессор), рассмотрим функции процессора и разберем как он работает.
+
+        Процессор – это устройство, отвечающее за обработку информации. Его называют по-разному: центральный процессор (ЦП) или центральное процессорное устройство (ЦПУ) или central processing unit (CPU), но все эти термины обозначают элемент, который является “мозгом” вычислительного устройства (смартфона, телевизора, компьютера, планшета, фотоаппарата, сервера).
+
+        Процессор представляет собой квадратную пластину со стороной около 5 сантиметров, с одной стороны которой находятся, похожие на ножки, коннекторы. С их помощью он прикрепляется к материнской плате – специальному элементу для установки дополнительных расширений.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="b-example-divider"></div>
+
+  <div class="container px-4 py-5">
+
+    <div class="py-5 my-5  border-top">
+      <h1 class="display-5 fw-bold text-body-emphasis fs-1 text-center">Как работает процессор</h1>
+      <!-- Краткая характеристика -->
+      <p>
+        В статье расскажем о том, что такое ЦП (центральный процессор), рассмотрим функции процессора и разберем как он работает.
+
+        Процессор – это устройство, отвечающее за обработку информации. Его называют по-разному: центральный процессор (ЦП) или центральное процессорное устройство (ЦПУ) или central processing unit (CPU), но все эти термины обозначают элемент, который является “мозгом” вычислительного устройства (смартфона, телевизора, компьютера, планшета, фотоаппарата, сервера).
+
+        Процессор представляет собой квадратную пластину со стороной около 5 сантиметров, с одной стороны которой находятся, похожие на ножки, коннекторы. С их помощью он прикрепляется к материнской плате – специальному элементу для установки дополнительных расширений.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="b-example-divider"></div>
+
+  <div class="container px-4 py-5">
+
+    <div class="py-5 my-5  border-top">
+      <h1 class="display-5 fw-bold text-body-emphasis fs-1 text-center">Виды процессоров</h1>
+      <!-- Краткая характеристика -->
+      <p>
+        В статье расскажем о том, что такое ЦП (центральный процессор), рассмотрим функции процессора и разберем как он работает.
+
+        Процессор – это устройство, отвечающее за обработку информации. Его называют по-разному: центральный процессор (ЦП) или центральное процессорное устройство (ЦПУ) или central processing unit (CPU), но все эти термины обозначают элемент, который является “мозгом” вычислительного устройства (смартфона, телевизора, компьютера, планшета, фотоаппарата, сервера).
+
+        Процессор представляет собой квадратную пластину со стороной около 5 сантиметров, с одной стороны которой находятся, похожие на ножки, коннекторы. С их помощью он прикрепляется к материнской плате – специальному элементу для установки дополнительных расширений.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="b-example-divider"></div>
+
+  <div class="container px-4 py-5">
+
+    <div class="py-5 my-5  border-top">
+      <h1 class="display-5 fw-bold text-body-emphasis fs-1 text-center">Как выбрать процессор</h1>
+      <!-- Краткая характеристика -->
+      <p>
+        В статье расскажем о том, что такое ЦП (центральный процессор), рассмотрим функции процессора и разберем как он работает.
+
+        Процессор – это устройство, отвечающее за обработку информации. Его называют по-разному: центральный процессор (ЦП) или центральное процессорное устройство (ЦПУ) или central processing unit (CPU), но все эти термины обозначают элемент, который является “мозгом” вычислительного устройства (смартфона, телевизора, компьютера, планшета, фотоаппарата, сервера).
+
+        Процессор представляет собой квадратную пластину со стороной около 5 сантиметров, с одной стороны которой находятся, похожие на ножки, коннекторы. С их помощью он прикрепляется к материнской плате – специальному элементу для установки дополнительных расширений.
+      </p>
+    </div>
+
+  </div>
+
+
+</main>
+
+
+
 
 <footer  th:insert="~{blocks/footer :: footer}"></footer>
 
