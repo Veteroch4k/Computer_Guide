@@ -1,10 +1,10 @@
 package com.veteroch4k.computer_guide.controllers;
 
-import com.veteroch4k.computer_guide.dao.Cpu_questionDAO;
-import com.veteroch4k.computer_guide.dao.Gpu_questionDAO;
-import com.veteroch4k.computer_guide.dao.Motherboard_questionDAO;
-import com.veteroch4k.computer_guide.dao.Ram_questionDAO;
+import com.veteroch4k.computer_guide.models.Cpu_question;
+import com.veteroch4k.computer_guide.models.Gpu_question;
+import com.veteroch4k.computer_guide.models.Motherboard_question;
 import com.veteroch4k.computer_guide.models.Ram_question;
+import com.veteroch4k.computer_guide.services.AbstractDAO;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -24,17 +24,7 @@ public class TestingSystemController {
   private  Long res = 0L;
 
   @Autowired
-  private Cpu_questionDAO cpu_questionDAO;
-
-  @Autowired
-  private Gpu_questionDAO gpu_questionDAO;
-
-  @Autowired
-  private Motherboard_questionDAO motherboard_questionDAO;
-
-  @Autowired
-  private Ram_questionDAO ram_questionDAO;
-
+  private AbstractDAO dao;
 
   /** ЦП **/
 
@@ -42,10 +32,11 @@ public class TestingSystemController {
   public ModelAndView cpu(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Центральный процессор");
 
-    modelAndView.addObject("questions", cpu_questionDAO.getQuestions());
-    modelAndView.addObject("variants", cpu_questionDAO.getVariants());
+    dao.setClazzSimpleName(Cpu_question.class.getSimpleName());
+    modelAndView.addObject("questions", dao.getQuestions());
+    modelAndView.addObject("variants", dao.getVariants());
 
-    modelAndView.addObject("type", cpu_questionDAO.getType());
+    modelAndView.addObject("type", dao.getType());
     modelAndView.setViewName("testing-units/questions/central_processor");
     return modelAndView;
 
@@ -53,9 +44,11 @@ public class TestingSystemController {
 
   @PostMapping("/cpu/process-answers")
   public ResponseEntity<String> cpuAns(@RequestBody Map<Integer, String> answers, ModelAndView modelAndView) {
+    dao.setClazzSimpleName(Cpu_question.class.getSimpleName());
+
     List<String> answerValues = new ArrayList<>(answers.values());
     answerValues.remove(0);
-    res = cpu_questionDAO.checkAnswers(answerValues);
+    res = dao.checkAnswers(answerValues);
     return ResponseEntity.ok("Ответы успешно обработаны");
 
   }
@@ -74,10 +67,13 @@ public class TestingSystemController {
   public ModelAndView gpu(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Графический процессор");
 
-    modelAndView.addObject("questions", gpu_questionDAO.getQuestions());
-    modelAndView.addObject("variants", gpu_questionDAO.getVariants());
+    dao.setClazzSimpleName(Gpu_question.class.getSimpleName());
 
-    modelAndView.addObject("type", gpu_questionDAO.getType());
+
+    modelAndView.addObject("questions", dao.getQuestions());
+    modelAndView.addObject("variants", dao.getVariants());
+
+    modelAndView.addObject("type", dao.getType());
     modelAndView.setViewName("testing-units/questions/graphic_card");
     return modelAndView;
 
@@ -87,7 +83,9 @@ public class TestingSystemController {
   public ResponseEntity<String> gpuAns(@RequestBody Map<Integer, String> answers, ModelAndView modelAndView) {
     List<String> answerValues = new ArrayList<>(answers.values());
     answerValues.remove(0);
-    res = gpu_questionDAO.checkAnswers(answerValues);
+    dao.setClazzSimpleName(Gpu_question.class.getSimpleName());
+
+    res = dao.checkAnswers(answerValues);
     return ResponseEntity.ok("Ответы успешно обработаны");
 
   }
@@ -105,11 +103,14 @@ public class TestingSystemController {
   @GetMapping("/motherboard")
   public ModelAndView motherboard(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Материнская плата");
+    dao.setClazzSimpleName(Motherboard_question.class.getSimpleName());
 
-    modelAndView.addObject("questions", motherboard_questionDAO.getQuestions());
-    modelAndView.addObject("variants", motherboard_questionDAO.getVariants());
 
-    modelAndView.addObject("type", motherboard_questionDAO.getType());
+
+    modelAndView.addObject("questions", dao.getQuestions());
+    modelAndView.addObject("variants", dao.getVariants());
+
+    modelAndView.addObject("type", dao.getType());
     modelAndView.setViewName("testing-units/questions/motherboard");
     return modelAndView;
 
@@ -119,8 +120,10 @@ public class TestingSystemController {
   public ResponseEntity<String> motherboardAns(@RequestBody Map<Integer, String> answers, ModelAndView modelAndView) {
     List<String> answerValues = new ArrayList<>(answers.values());
     answerValues.remove(0);
+    dao.setClazzSimpleName(Motherboard_question.class.getSimpleName());
 
-    res = motherboard_questionDAO.checkAnswers(answerValues);
+
+    res = dao.checkAnswers(answerValues);
     return ResponseEntity.ok("Ответы успешно обработаны");
 
   }
@@ -138,11 +141,13 @@ public class TestingSystemController {
   @GetMapping("/ram")
   public ModelAndView ram(ModelAndView modelAndView) {
     modelAndView.addObject("title", "Оперативная память");
+    dao.setClazzSimpleName(Ram_question.class.getSimpleName());
 
-    modelAndView.addObject("questions", ram_questionDAO.getQuestions());
-    modelAndView.addObject("variants", ram_questionDAO.getVariants());
 
-    modelAndView.addObject("type", ram_questionDAO.getType());
+    modelAndView.addObject("questions", dao.getQuestions());
+    modelAndView.addObject("variants", dao.getVariants());
+
+    modelAndView.addObject("type", dao.getType());
     modelAndView.setViewName("testing-units/questions/ram");
     return modelAndView;
 
@@ -152,8 +157,9 @@ public class TestingSystemController {
   public ResponseEntity<String> ramAns(@RequestBody Map<Integer, String> answers, ModelAndView modelAndView) {
     List<String> answerValues = new ArrayList<>(answers.values());
     answerValues.remove(0);
+    dao.setClazzSimpleName(Ram_question.class.getSimpleName());
 
-    res = ram_questionDAO.checkAnswers(answerValues);
+    res = dao.checkAnswers(answerValues);
     return ResponseEntity.ok("Ответы успешно обработаны");
 
   }

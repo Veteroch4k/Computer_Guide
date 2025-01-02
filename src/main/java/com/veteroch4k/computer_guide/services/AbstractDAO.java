@@ -7,16 +7,18 @@ import jakarta.transaction.Transactional;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import lombok.Setter;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-@Transactional // Управляемая Spring транзакция
-public abstract class AbstractDAO<T> {
+//@Transactional // Управляемая Spring транзакция - необязательно: не происходит изменений сущности
+public class AbstractDAO {
 
-  private Class<T> clazz;
+  @Setter
+  private String clazzSimpleName;
 
   @Autowired
   private SessionFactory sessionFactory;
@@ -24,16 +26,12 @@ public abstract class AbstractDAO<T> {
   @PersistenceContext
   private EntityManager entityManager;
 
-  public AbstractDAO(Class<T> clazz) {
-    this.clazz = clazz;
-  }
-
   public Long checkAnswers(List<String> ans) {
     Long res = 0L;
     try (Session session = sessionFactory.openSession()) {
       for(int i = 0; i < ans.size(); i++) {
         org.hibernate.query.Query<?> query = session.createQuery(
-                "select count(*) from " + clazz.getSimpleName() + " u where u.id = :id and u.answer = :answer")
+                "select count(*) from " + clazzSimpleName + " u where u.id = :id and u.answer = :answer")
             .setParameter("id", i + 1)
             .setParameter("answer", ans.get(i));
         res += (Long) query.uniqueResult();
@@ -42,22 +40,22 @@ public abstract class AbstractDAO<T> {
     return res;
   }
 
-  public List<T> getQuestions() {
+  public List getQuestions() {
     try (Session session = sessionFactory.openSession()) {
-      return session.createQuery("select u.question from " + clazz.getSimpleName() + " u ", clazz).list();
+      return session.createQuery("select u.question from " + clazzSimpleName + " u ").list();
     }
   }
 
-  public List<T> getType() {
+  public List getType() {
     try (Session session = sessionFactory.openSession()) {
-      return session.createQuery("select t.type from " + clazz.getSimpleName() + " t", clazz).list();
+      return session.createQuery("select t.type from " + clazzSimpleName + " t").list();
     }
   }
 
   public Map<Integer, List<String>> getVariants() {
     Map<Integer, List<String>> var = new HashMap<>();
     int n = Math.toIntExact(getRows());
-    String tableName = clazz.getSimpleName().toLowerCase() + "s";
+    String tableName = clazzSimpleName.toLowerCase() + "s";
     try (Session session = sessionFactory.openSession()) {
       for(int i = 1; i <= n; i++) {
         String sql = "SELECT jt.text FROM " + tableName + " AS t, "
@@ -73,7 +71,7 @@ public abstract class AbstractDAO<T> {
 
   private Long getRows() {
     try (Session session = sessionFactory.openSession()) {
-      return (Long) session.createQuery("select count(*) from " + clazz.getSimpleName(), clazz).uniqueResult();
+      return (Long) session.createQuery("select count(*) from " + clazzSimpleName).uniqueResult();
     }
   }
 
