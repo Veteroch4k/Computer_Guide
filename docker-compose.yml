@@ -1,0 +1,62 @@
+version: '3.3'
+
+services:
+  # Приложение spring-boot
+  app:
+    container_name: computer_guide
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "5005:5005"  # Добавлен порт для удаленного отладчика
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/computer_guide
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      _JAVA_OPTIONS: >
+        -Xdebug
+        -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
+      #JAVA_OPTS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"  # Добавлены опции JVM для удаленного отладчика
+    networks:
+      - backend
+
+  # База данных
+  db:
+    image: mysql:8.0.30
+    container_name: computer_guide-mysql
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: computer_guide
+    ports:
+      - "3306:3306"
+    networks:
+      - backend
+
+  # веб-приложение phpmyadmin
+  phpmyadmin:
+    container_name: template-phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "8081:80"
+    restart: always
+    depends_on:
+      - db
+    networks:
+      - backend
+
+volumes:
+  db_data:
+
+networks:
+  backend:

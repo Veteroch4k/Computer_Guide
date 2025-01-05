@@ -1,0 +1,276 @@
+databaseChangeLog:
+- changeSet:
+    id: 1736067144483-1
+    author: Veteroch4k
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: question
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: type
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: answer
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: variants
+            type: JSON
+        - column:
+            constraints:
+              nullable: false
+            name: description
+            type: TEXT
+        tableName: cpu_questions
+- changeSet:
+    id: 1736067144483-2
+    author: Veteroch4k
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: question
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: type
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: answer
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: variants
+            type: JSON
+        - column:
+            constraints:
+              nullable: false
+            name: description
+            type: TEXT
+        tableName: gpu_questions
+- changeSet:
+    id: 1736067144483-3
+    author: Veteroch4k
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: question
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: type
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: answer
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: variants
+            type: JSON
+        - column:
+            constraints:
+              nullable: false
+            name: description
+            type: TEXT
+        tableName: motherboard_questions
+- changeSet:
+    id: 1736067144483-4
+    author: Veteroch4k
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: question
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: type
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: answer
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: variants
+            type: JSON
+        - column:
+            constraints:
+              nullable: false
+            name: description
+            type: TEXT
+        tableName: powerUnit_questions
+- changeSet:
+    id: 1736067144483-5
+    author: Veteroch4k
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: question
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: type
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: answer
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: variants
+            type: JSON
+        - column:
+            constraints:
+              nullable: false
+            name: description
+            type: TEXT
+        tableName: ram_questions
+- changeSet:
+    id: 1736067144483-6
+    author: Veteroch4k
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: question
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: type
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: answer
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: variants
+            type: JSON
+        - column:
+            constraints:
+              nullable: false
+            name: description
+            type: TEXT
+        tableName: storageDevices_questions
+- changeSet:
+    id: 1736067144483-7
+    author: Veteroch4k
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: question
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: type
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: answer
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: variants
+            type: JSON
+        - column:
+            constraints:
+              nullable: false
+            name: description
+            type: TEXT
+        tableName: сoolingSystem_questions
+
+

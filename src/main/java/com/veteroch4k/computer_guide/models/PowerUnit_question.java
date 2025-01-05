@@ -17,7 +17,7 @@ import org.json.simple.JSONObject;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "powerUnit_question", schema = "computer_guide")
+@Table(name = "powerUnit_questions", schema = "computer_guide")
 public class PowerUnit_question {
 
   @Id
